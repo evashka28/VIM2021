@@ -1,0 +1,84 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[left=2.00cm, right=2.00cm, top=2.00cm, bottom=2.00cm]{geometry}
+\linespread{1.25}
+\usepackage{setspace}
+\usepackage{indentfirst}
+\setlength{\parindent}{1.25cm}
+\let\paragraph\ignorespaces
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{graphicx}
+
+
+
+\begin{document}
+	
+\begin{titlepage}
+	
+\begin{center}
+	\large Университет ИТМО\\[5cm]
+	\LARGE Практическая работа №1\\
+	\normalsize по дисциплине <<Визуализация и моделирование>>\\[5cm]
+\end{center}
+\begin{flushright}
+		\begin{minipage}{0.6\textwidth}
+		\begin{flushleft}
+			\large
+			\singlespacing 
+			\textbf{Автор:} Винникова Ева Михайловна\\
+			\textbf{Поток:} ВИМ 1.2\\
+			\textbf{Группа:} К3222\\
+			\textbf{Факультет:} ИКТ\\
+			\textbf{Преподаватель:} Чернышева А.В.
+		\end{flushleft}
+	\end{minipage}
+\end{flushright}
+
+\vfill
+
+\begin{center}
+	{\large Санкт-Петербург, \the\year{ г.}}
+\end{center}
+ 
+\end{titlepage}
+\normalsize
+
+
+Датасет содержит информацию о женских корейских поп группах.\\
+\\
+\begin{tabular}{ | l | l | l | }
+\hline
+Столбец & Данные & Тип \\ \hline
+Name & название группы & строка \\
+Short & сокращенное название группы & строка \\
+Korean name & название группы на корейском & строка \\
+Debut & дата дебюта & дата \\
+Company & комания группы & строка \\
+Members & количество участников в группе & число \\
+Orig.memb. & планируемое количество участников & число \\
+Fanclub name & название фанатской базы & строка \\
+Active & активна ли группа на данный момент & строка \\
+\hline
+\end{tabular}
+\\
+\\В данном датасете можно решать задачи:\\
+В какой компании больше всего групп\\
+Как изменяется количество новых групп с течением времени \\
+Какая компания выпускает больше всего новых групп в год\\
+Самое популярное количество участников в группах
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
