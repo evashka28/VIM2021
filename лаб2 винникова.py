@@ -16,7 +16,7 @@ df_na
 
 df.dtypes
 
-fan_df = df.loc[df["Fanclub Name"] != "-"]
+fan_df = df.loc[df["Fanclub Name"] != "-"]#проверка естьли название фандома
 fan_num = fan_df.shape[0]
 nfan_df = df.loc[df["Fanclub Name"] == "-"]
 nfan_num = nfan_df.shape[0]
@@ -28,7 +28,7 @@ fan_pie.plot.pie(y="",
                  fontsize=10,
                  figsize=(5, 5));
 
-act_df = df.loc[df["Active"] == "Yes"]
+act_df = df.loc[df["Active"] == "Yes"]#проверка активны или нет
 act_num = act_df.shape[0]
 nact_df = df.loc[df["Active"] == "No"]
 nact_num = nact_df.shape[0]
@@ -40,7 +40,7 @@ act_pie.plot.pie(y="",
                  fontsize=10,
                  figsize=(5, 5));
 
-male_df = df.loc[df["Gender"] == "M"]
+male_df = df.loc[df["Gender"] == "M"]#разделение по полу
 m_num = male_df.shape[0]
 fem_df = df.loc[df["Gender"] == "F"]
 f_num = fem_df.shape[0]
@@ -53,7 +53,7 @@ age_pie.plot.pie(y="",
                  figsize=(5, 5));
 
 import operator
-company_data = {comp: df["Company"].to_list().count(comp) for comp in set(df["Company"])}
+company_data = {comp: df["Company"].to_list().count(comp) for comp in set(df["Company"])}#все компании
 company_data=sorted(company_data.items(), key=operator.itemgetter(0))
 company_data=dict(company_data)
 del_data=[]
@@ -67,7 +67,7 @@ comp_df = pd.DataFrame.from_dict(data=company_data, orient="index", columns=["Co
 fig, axes = plt.subplots(nrows=1, ncols=1)
 comp_df.plot.barh(ax=axes, subplots = True, figsize=(12, 5));
 
-fe_df = df.loc[(df["Company"] == "SM") & (df["Gender"] == "M")]
+fe_df = df.loc[(df["Company"] == "SM") & (df["Gender"] == "M")]#пол в SM
 fe_num = fe_df.shape[0]
 me_df = df.loc[(df["Company"] == "SM") & (df["Gender"] == "F")]
 me_num = me_df.shape[0]
@@ -80,7 +80,7 @@ age_pie.plot.pie(y="",
                  figsize=(5, 5));
 
 import operator
-members_data = {memb: df["Members"].to_list().count(memb) for memb in set(df["Members"])}
+members_data = {memb: df["Members"].to_list().count(memb) for memb in set(df["Members"])}#количество участников
 members_data=sorted(members_data.items(), key=operator.itemgetter(0))
 members_data=dict(members_data)
 del_data=[]
@@ -111,7 +111,7 @@ import matplotlib.pyplot as plt
 age_df = pd.DataFrame.from_dict(data=date_data, orient="index", columns=["Number"])
 age_df.plot();
 
-ch_df = df.loc[df["Members"] != df["Orig. Memb."]]
+ch_df = df.loc[df["Members"] != df["Orig. Memb."]]#изменение количества участников
 ch_num = ch_df.shape[0]
 nch_df = df.loc[df["Members"] == df["Orig. Memb."]]
 nch_num = nch_df.shape[0]
@@ -154,7 +154,7 @@ for i in dates: #вычленяем год из строки
 dates2 = df.disband
 disband_list = []
 num = 0
-for j in dates2:
+for j in dates2:#вычленяем год из строки опять
   if  j =="0":
     j="2021"
   else:
@@ -162,7 +162,7 @@ for j in dates2:
   disband_list.append(j)
   num = num+1
 old_list=[]
-for k in range (0,num):
+for k in range (0,num):#находим возраст группы
   l=int(disband_list[k])-int(debut_list[k])
   old_list.append(l)
 
@@ -170,7 +170,7 @@ import operator
 age_data = {memb: old_list.count(memb) for memb in set(old_list)}
 age_data=dict(age_data)
 del_data=[]
-for i in age_data:
+for i in age_data:#обрезаем редкие
   if age_data[i]<5: 
    del_data.append(i)
 for j in del_data:
